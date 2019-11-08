@@ -171,7 +171,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/08/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/09/ChineseOCR/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -185,7 +185,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/08/hello-world/" class="post-title-link" itemprop="url">Hello Hexo!</a>
+            <a href="/2019/11/09/ChineseOCR/" class="post-title-link" itemprop="url">ChineseOCR</a>
         </h1>
 
         <div class="post-meta">
@@ -194,16 +194,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2019-11-08 23:50:27" itemprop="dateCreated datePublished" datetime="2019-11-08T23:50:27+08:00">2019-11-08</time>
+              <time title="Created: 2019-11-09 00:21:39 / Modified: 00:22:40" itemprop="dateCreated datePublished" datetime="2019-11-09T00:21:39+08:00">2019-11-09</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-09 00:19:04" itemprop="dateModified" datetime="2019-11-09T00:19:04+08:00">2019-11-09</time>
-              </span>
 
           
 
@@ -216,18 +210,28 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="欢迎使用Hexo，这是一个快速入门的教程。"><a href="#欢迎使用Hexo，这是一个快速入门的教程。" class="headerlink" title="欢迎使用Hexo，这是一个快速入门的教程。"></a>欢迎使用Hexo，这是一个快速入门的教程。</h2><h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建一个新的post"><a href="#创建一个新的post" class="headerlink" title="创建一个新的post"></a>创建一个新的post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+          <h2 id="本文使用chineseocr的GitHub-repo"><a href="#本文使用chineseocr的GitHub-repo" class="headerlink" title="本文使用chineseocr的GitHub repo"></a>本文使用chineseocr的GitHub repo</h2><p>本人使用环境<br>Mac OS 10.15<br>Anaconda 4.7.12<br>python 3.6<br>tensorflow 1.9<br>由于lz采用的CPU版本的setup.md故仅讨论</p>
+<h2 id="下载models文件-darknet"><a href="#下载models文件-darknet" class="headerlink" title="下载models文件 darknet"></a>下载models文件 darknet</h2><h2 id="CPU-环境配置，支持linux-macOs"><a href="#CPU-环境配置，支持linux-macOs" class="headerlink" title="CPU 环境配置，支持linux\macOs"></a>CPU 环境配置，支持linux\macOs</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n chineseocr python=3.6 pip scipy numpy jupyter ipython</span><br></pre></td></tr></table></figure>
+<h2 id="运用conda-创建python环境"><a href="#运用conda-创建python环境" class="headerlink" title="运用conda 创建python环境"></a>运用conda 创建python环境</h2><p>1、激活创建的环境</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> activate chineseocr</span><br></pre></td></tr></table></figure>
 
+<p>2、编译</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd darknet/ &amp;&amp; make &amp;&amp; cd ..</span><br></pre></td></tr></table></figure>
 
-<h3 id="运行服务在本地端口"><a href="#运行服务在本地端口" class="headerlink" title="运行服务在本地端口"></a>运行服务在本地端口</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>3、pip安装各种库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install easydict opencv-contrib-python==4.0.0.21 Cython h5py lmdb mahotas pandas requests bs4 matplotlib lxml -i https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure>
 
+<p>lz在此处安装mahotas时报错，是由于Mac OS版本问题，因此在安装时，可单独进行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MACOSX_DEPLOYMENT_TARGET=10.9 pip install mahotas -i https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -U pillow -i https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure>
 
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install web.py==0.40.dev0 redis</span><br></pre></td></tr></table></figure>
 
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install keras==2.1.5 tensorflow==1.9</span><br></pre></td></tr></table></figure>
 
-<h3 id="部署到远程服务器"><a href="#部署到远程服务器" class="headerlink" title="部署到远程服务器"></a>部署到远程服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
+<p>4、使用conda安装pytorch、torchvision</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision -c pytorch</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -335,6 +339,81 @@
   
   
 
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/09/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Echo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/05/09/hello-world/" class="post-title-link" itemprop="url">Hello Hexo!</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-05-09 22:29:56" itemprop="dateCreated datePublished" datetime="2019-05-09T22:29:56+08:00">2019-05-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-11-09 00:20:45" itemprop="dateModified" datetime="2019-11-09T00:20:45+08:00">2019-11-09</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="欢迎使用Hexo，这是一个快速入门的教程。"><a href="#欢迎使用Hexo，这是一个快速入门的教程。" class="headerlink" title="欢迎使用Hexo，这是一个快速入门的教程。"></a>欢迎使用Hexo，这是一个快速入门的教程。</h2><h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建一个新的post"><a href="#创建一个新的post" class="headerlink" title="创建一个新的post"></a>创建一个新的post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="运行服务在本地端口"><a href="#运行服务在本地端口" class="headerlink" title="运行服务在本地端口"></a>运行服务在本地端口</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="部署到远程服务器"><a href="#部署到远程服务器" class="headerlink" title="部署到远程服务器"></a>部署到远程服务器</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
   </div>
 
   
@@ -382,7 +461,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
