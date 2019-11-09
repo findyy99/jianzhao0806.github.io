@@ -58,7 +58,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="说明：lz水平有限只是运行该repo的代码 1、本文使用chineseocr的GitHub repo 使用环境 Mac OS 10.15  Anaconda 4.7.12 Python 3.6 Tensorflow 1.9    由于lz采用的CPU版本的setup.md故仅讨论cpu版本的设置。2、下载models、darknet文件 分别将下载的文件放入model、darknet的文件夹mod">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-09T08:55:02.575Z">
+<meta property="og:updated_time" content="2019-11-09T08:58:32.229Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2019/11/09/ChineseOCR/">
@@ -198,7 +198,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2019-11-09 00:21:39 / Modified: 16:55:02" itemprop="dateCreated datePublished" datetime="2019-11-09T00:21:39+08:00">2019-11-09</time>
+              <time title="Created: 2019-11-09 00:21:39 / Modified: 16:58:32" itemprop="dateCreated datePublished" datetime="2019-11-09T00:21:39+08:00">2019-11-09</time>
             </span>
 
           
@@ -226,7 +226,7 @@
 <li><h3 id="分别将下载的文件放入model、darknet的文件夹"><a href="#分别将下载的文件放入model、darknet的文件夹" class="headerlink" title="分别将下载的文件放入model、darknet的文件夹"></a>分别将下载的文件放入model、darknet的文件夹</h3><h3 id="model-goolge-drive链接"><a href="#model-goolge-drive链接" class="headerlink" title="model: goolge drive链接"></a>model: <a href="https://drive.google.com/open?id=1nAVj1pGvtw0LE_wAU5fMulekboScjAaK" target="_blank" rel="noopener">goolge drive链接</a></h3><h3 id="darknet-goolge-drive链接"><a href="#darknet-goolge-drive链接" class="headerlink" title="darknet: goolge drive链接"></a>darknet: <a href="https://drive.google.com/open?id=117Vqy-2-keVg5uqzGvZE-XQjJ6S6O2j2" target="_blank" rel="noopener">goolge drive链接</a></h3></li>
 </ul>
 <h2 id="3、CPU-环境配置，支持linux-macOs"><a href="#3、CPU-环境配置，支持linux-macOs" class="headerlink" title="3、CPU 环境配置，支持linux\macOs"></a>3、CPU 环境配置，支持linux\macOs</h2><ul>
-<li>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n chineseocr python=3.6 pip scipy 	numpy jupyter ipython</span><br></pre></td></tr></table></figure>
+<li>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n chineseocr python=3.6 pip scipy numpy jupyter ipython</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
@@ -244,9 +244,9 @@
 <li><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install easydict opencv-contrib-python==4.0.0.21 Cython h5py lmdb mahotas pandas requests bs4 matplotlib lxml -i https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>注：lz在此处安装mahotas时报错，是由于Mac OS版本问题，因此在安装时，可单独进行</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MACOSX_DEPLOYMENT_TARGET=10.9 pip install mahotas 	-i https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MACOSX_DEPLOYMENT_TARGET=10.9 pip install mahotas -i https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure>
 
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -U pillow -i https://	pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -U pillow -i https://pypi.tuna.tsinghua.edu.cn/simple/</span><br></pre></td></tr></table></figure>
 
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install web.py==0.40.dev0 redis</span><br></pre></td></tr></table></figure>
 
@@ -271,8 +271,8 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/05/09/hello-world/" rel="next" title="Hello Hexo!">
-                  <i class="fa fa-chevron-left"></i> Hello Hexo!
+                <a href="/2019/05/09/Hexo-Github-Pages%E6%90%AD%E5%BB%BA%E5%B0%8F%E5%8D%9A%E5%AE%A2/" rel="next" title="Hexo+Github Pages搭建小博客">
+                  <i class="fa fa-chevron-left"></i> Hexo+Github Pages搭建小博客
                 </a>
             </div>
 
