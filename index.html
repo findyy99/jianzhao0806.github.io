@@ -197,6 +197,118 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://www.findyy.gq/2020/02/26/rclone%E7%9A%84%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/2.jpg">
+      <meta itemprop="name" content="Echo">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/26/rclone%E7%9A%84%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">rclone的使用</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-02-26 16:41:58 / Modified: 18:06:25" itemprop="dateCreated datePublished" datetime="2020-02-26T16:41:58+08:00">2020-02-26</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2020/02/26/rclone%E7%9A%84%E4%BD%BF%E7%94%A8/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/26/rclone%E7%9A%84%E4%BD%BF%E7%94%A8/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <hr>
+<p>title: rclone的使用<br>date: 2020-02-26 16:41:58<br>tags: [教程,rclone]</p>
+<hr>
+<p>##安装<br>　推荐通过脚本快速安装，对于Linux/macOS/BSD系统，在终端中执行以下命令　</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://rclone.org/install.sh | sudo bash</span><br></pre></td></tr></table></figure>
+
+<p>##引导<br>　首先，由于各个对象存储系统的身份验证相当复杂，故Rclone都将起保存在config中。</p>
+<p>通过下面命令来首次引导rclone</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rclone config</span><br></pre></td></tr></table></figure>
+
+<p>　</p>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>Rclone将目录从一个存储系统同步到另一个存储系统。</p>
+<p>它的语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Syntax: [options] subcommand &lt;parameters&gt; &lt;parameters...&gt;</span><br></pre></td></tr></table></figure>
+
+<p>源和目标路径由您在配置文件中给存储系统的名称指定，然后是子路径，例如“drive:myfolder”以查看Google驱动器中的“myfolder”。</p>
+<p>您可以在配置文件中定义尽可能多的存储路径。</p>
+<h2 id="子命令"><a href="#子命令" class="headerlink" title="子命令"></a>子命令</h2><p>rclone使用一个子命令系统。 例如：<br>rclone ls remote:path # lists a re<br>rclone copy /local/path remote:path # copies /local/path to the remote<br>rclone sync /local/path remote:path # syncs /local/path to the remote</p>
+<p>具体使用列表请见《命令行汇总列表》</p>
+<h2 id="复制单文件"><a href="#复制单文件" class="headerlink" title="复制单文件"></a>复制单文件</h2><p>rclone通常会同步或复制目录。 但是，如果源远程指向一个文件，rclone将只复制该文件。 目标远程站点必须指向一个目录 – 否则rclone会给出错误：<br>Failed to create file system for “remote:file”: is a file not a directory<br>比如你在remote有个文件叫test.jpg的想要复制，那你可以像下面这样复制：<br>rclone copy remote:test.jpg /tmp/download</p>
+<p>文件test.jpg将被放置在/ tmp /下载。</p>
+<p>这相当于指定<br>rclone copy –files-from /tmp/files remote: /tmp/download</p>
+<p>/tmp/files包含单行</p>
+<p>test.jpg放在<br>建议在复制单个文件时使用复制，而不是同步。 他们有几乎相同的效果，但复制将使用更少的内存。</p>
+<h2 id="利用-复制文件和目录"><a href="#利用-复制文件和目录" class="headerlink" title="利用:复制文件和目录"></a>利用:复制文件和目录</h2><p>rclone使用:标记远程名称。 但是，这是非Windows操作系统中的有效文件名组件。 远程名称解析器只会搜索:直到第一个/所以如果您需要对像这样的文件或目录进行操作，则使用以/开头的完整路径，或使用./作为当前目录前缀。</p>
+<p>因此，要将名为sync：me的目录同步到名为remote:的远程 就使用：<br>rclone sync ./sync:me remote:path<br>或者<br>rclone sync /full/path/to/sync:me remote:path</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://www.findyy.gq/2019/12/09/demo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -820,7 +932,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -867,13 +979,13 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">2k</span>
+    <span title="Symbols count total">4k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">2 mins.</span>
+    <span title="Reading time total">3 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
   </div>

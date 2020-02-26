@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>rclone的使用</title>
+    <url>/2020/02/26/rclone%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<hr>
+<p>title: rclone的使用<br>date: 2020-02-26 16:41:58<br>tags: [教程,rclone]</p>
+<hr>
+<p>##安装<br>　推荐通过脚本快速安装，对于Linux/macOS/BSD系统，在终端中执行以下命令　</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">curl https://rclone.org/install.sh | sudo bash</span><br></pre></td></tr></table></figure>
+
+<p>##引导<br>　首先，由于各个对象存储系统的身份验证相当复杂，故Rclone都将起保存在config中。</p>
+<p>通过下面命令来首次引导rclone</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rclone config</span><br></pre></td></tr></table></figure>
+
+<p>　</p>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>Rclone将目录从一个存储系统同步到另一个存储系统。</p>
+<p>它的语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Syntax: [options] subcommand &lt;parameters&gt; &lt;parameters...&gt;</span><br></pre></td></tr></table></figure>
+
+<p>源和目标路径由您在配置文件中给存储系统的名称指定，然后是子路径，例如“drive:myfolder”以查看Google驱动器中的“myfolder”。</p>
+<p>您可以在配置文件中定义尽可能多的存储路径。</p>
+<h2 id="子命令"><a href="#子命令" class="headerlink" title="子命令"></a>子命令</h2><p>rclone使用一个子命令系统。 例如：<br>rclone ls remote:path # lists a re<br>rclone copy /local/path remote:path # copies /local/path to the remote<br>rclone sync /local/path remote:path # syncs /local/path to the remote</p>
+<p>具体使用列表请见《命令行汇总列表》</p>
+<h2 id="复制单文件"><a href="#复制单文件" class="headerlink" title="复制单文件"></a>复制单文件</h2><p>rclone通常会同步或复制目录。 但是，如果源远程指向一个文件，rclone将只复制该文件。 目标远程站点必须指向一个目录 – 否则rclone会给出错误：<br>Failed to create file system for “remote:file”: is a file not a directory<br>比如你在remote有个文件叫test.jpg的想要复制，那你可以像下面这样复制：<br>rclone copy remote:test.jpg /tmp/download</p>
+<p>文件test.jpg将被放置在/ tmp /下载。</p>
+<p>这相当于指定<br>rclone copy –files-from /tmp/files remote: /tmp/download</p>
+<p>/tmp/files包含单行</p>
+<p>test.jpg放在<br>建议在复制单个文件时使用复制，而不是同步。 他们有几乎相同的效果，但复制将使用更少的内存。</p>
+<h2 id="利用-复制文件和目录"><a href="#利用-复制文件和目录" class="headerlink" title="利用:复制文件和目录"></a>利用:复制文件和目录</h2><p>rclone使用:标记远程名称。 但是，这是非Windows操作系统中的有效文件名组件。 远程名称解析器只会搜索:直到第一个/所以如果您需要对像这样的文件或目录进行操作，则使用以/开头的完整路径，或使用./作为当前目录前缀。</p>
+<p>因此，要将名为sync：me的目录同步到名为remote:的远程 就使用：<br>rclone sync ./sync:me remote:path<br>或者<br>rclone sync /full/path/to/sync:me remote:path</p>
+]]></content>
+  </entry>
+  <entry>
     <title>常用命令</title>
     <url>/2019/12/09/demo/</url>
     <content><![CDATA[<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">scp -P 0000 username@192.168.1.1 root@ip</span><br></pre></td></tr></table></figure>
