@@ -49,15 +49,15 @@
 <!-- 网页加载条 -->
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <meta name="description" content="##安装　推荐通过脚本快速安装，对于Linux&#x2F;macOS&#x2F;BSD系统，在终端中执行以下命令　 1curl https:&#x2F;&#x2F;rclone.org&#x2F;install.sh | sudo bash  ##引导　首先，由于各个对象存储系统的身份验证相当复杂，故Rclone都将起保存在config中。 通过下面命令来首次引导rclone 1rclone config   用法Rclone将目录从一个存储系统">
+  <meta name="description" content="安装　推荐通过脚本快速安装，对于Linux&#x2F;macOS&#x2F;BSD系统，在终端中执行以下命令　 1curl https:&#x2F;&#x2F;rclone.org&#x2F;install.sh | sudo bash  引导　首先，由于各个对象存储系统的身份验证相当复杂，故Rclone都将起保存在config中。 通过下面命令来首次引导rclone 1rclone config   用法Rclone将目录从一个存储系统同步到另">
 <meta name="keywords" content="教程,rclone">
 <meta property="og:type" content="article">
 <meta property="og:title" content="rclone的使用">
 <meta property="og:url" content="https:&#x2F;&#x2F;www.findyy.gq&#x2F;2020&#x2F;02&#x2F;26&#x2F;rclone%E7%9A%84%E4%BD%BF%E7%94%A8&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="##安装　推荐通过脚本快速安装，对于Linux&#x2F;macOS&#x2F;BSD系统，在终端中执行以下命令　 1curl https:&#x2F;&#x2F;rclone.org&#x2F;install.sh | sudo bash  ##引导　首先，由于各个对象存储系统的身份验证相当复杂，故Rclone都将起保存在config中。 通过下面命令来首次引导rclone 1rclone config   用法Rclone将目录从一个存储系统">
+<meta property="og:description" content="安装　推荐通过脚本快速安装，对于Linux&#x2F;macOS&#x2F;BSD系统，在终端中执行以下命令　 1curl https:&#x2F;&#x2F;rclone.org&#x2F;install.sh | sudo bash  引导　首先，由于各个对象存储系统的身份验证相当复杂，故Rclone都将起保存在config中。 通过下面命令来首次引导rclone 1rclone config   用法Rclone将目录从一个存储系统同步到另">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-26T10:21:22.881Z">
+<meta property="og:updated_time" content="2020-03-06T02:37:15.829Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://www.findyy.gq/2020/02/26/rclone%E7%9A%84%E4%BD%BF%E7%94%A8/">
@@ -223,10 +223,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-02-26 16:41:58 / Modified: 18:21:22" itemprop="dateCreated datePublished" datetime="2020-02-26T16:41:58+08:00">2020-02-26</time>
+              <time title="Created: 2020-02-26 16:41:58" itemprop="dateCreated datePublished" datetime="2020-02-26T16:41:58+08:00">2020-02-26</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-03-06 10:37:15" itemprop="dateModified" datetime="2020-03-06T10:37:15+08:00">2020-03-06</time>
+              </span>
 
           
   
@@ -248,7 +254,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.2k</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -267,10 +273,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>##安装<br>　推荐通过脚本快速安装，对于Linux/macOS/BSD系统，在终端中执行以下命令　</p>
+        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>　推荐通过脚本快速安装，对于Linux/macOS/BSD系统，在终端中执行以下命令　</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://rclone.org/install.sh | sudo bash</span><br></pre></td></tr></table></figure>
 
-<p>##引导<br>　首先，由于各个对象存储系统的身份验证相当复杂，故Rclone都将起保存在config中。</p>
+<h2 id="引导"><a href="#引导" class="headerlink" title="引导"></a>引导</h2><p>　首先，由于各个对象存储系统的身份验证相当复杂，故Rclone都将起保存在config中。</p>
 <p>通过下面命令来首次引导rclone</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rclone config</span><br></pre></td></tr></table></figure>
 
@@ -290,6 +296,7 @@
 <p>test.jpg放在<br>建议在复制单个文件时使用复制，而不是同步。 他们有几乎相同的效果，但复制将使用更少的内存。</p>
 <h2 id="利用-复制文件和目录"><a href="#利用-复制文件和目录" class="headerlink" title="利用:复制文件和目录"></a>利用:复制文件和目录</h2><p>rclone使用:标记远程名称。 但是，这是非Windows操作系统中的有效文件名组件。 远程名称解析器只会搜索:直到第一个/所以如果您需要对像这样的文件或目录进行操作，则使用以/开头的完整路径，或使用./作为当前目录前缀。</p>
 <p>因此，要将名为sync：me的目录同步到名为remote:的远程 就使用：<br>rclone sync ./sync:me remote:path<br>或者<br>rclone sync /full/path/to/sync:me remote:path</p>
+<p>ssr://Z2Vja28uYnV6ejo4MDphdXRoX2NoYWluX2E6bm9uZTp0bHMxLjJfdGlja2V0X2F1dGg6WVdOeWIzTnpMV2RtZHk1amIyMC8_b2Jmc3BhcmFtPVlteHZaeTUwY3pNdVpYaHdiR2xqYVhRdVltbHVaeTV1WlhRJnByb3RvcGFyYW09TkRVMk5URTZWR2hFZUVaVSZyZW1hcmtzPTVwZWw1cHlzU2xBdFNWQXlLT1dBamVlT2h6b3hLUSZncm91cD01Nml6NWE2YTU3cV82TGV2</p>
 
     </div>
 
@@ -373,7 +380,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#用法"><span class="nav-number">1.</span> <span class="nav-text">用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子命令"><span class="nav-number">2.</span> <span class="nav-text">子命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复制单文件"><span class="nav-number">3.</span> <span class="nav-text">复制单文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-复制文件和目录"><span class="nav-number">4.</span> <span class="nav-text">利用:复制文件和目录</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引导"><span class="nav-number">2.</span> <span class="nav-text">引导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用法"><span class="nav-number">3.</span> <span class="nav-text">用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子命令"><span class="nav-number">4.</span> <span class="nav-text">子命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复制单文件"><span class="nav-number">5.</span> <span class="nav-text">复制单文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用-复制文件和目录"><span class="nav-number">6.</span> <span class="nav-text">利用:复制文件和目录</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -442,7 +449,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">Reading time total &asymp;</span>
-    <span title="Reading time total">3 mins.</span>
+    <span title="Reading time total">4 mins.</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
   </div>

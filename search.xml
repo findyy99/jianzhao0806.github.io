@@ -3,10 +3,10 @@
   <entry>
     <title>rclone的使用</title>
     <url>/2020/02/26/rclone%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>##安装<br>　推荐通过脚本快速安装，对于Linux/macOS/BSD系统，在终端中执行以下命令　</p>
+    <content><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>　推荐通过脚本快速安装，对于Linux/macOS/BSD系统，在终端中执行以下命令　</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">curl https://rclone.org/install.sh | sudo bash</span><br></pre></td></tr></table></figure>
 
-<p>##引导<br>　首先，由于各个对象存储系统的身份验证相当复杂，故Rclone都将起保存在config中。</p>
+<h2 id="引导"><a href="#引导" class="headerlink" title="引导"></a>引导</h2><p>　首先，由于各个对象存储系统的身份验证相当复杂，故Rclone都将起保存在config中。</p>
 <p>通过下面命令来首次引导rclone</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rclone config</span><br></pre></td></tr></table></figure>
 
@@ -26,6 +26,7 @@
 <p>test.jpg放在<br>建议在复制单个文件时使用复制，而不是同步。 他们有几乎相同的效果，但复制将使用更少的内存。</p>
 <h2 id="利用-复制文件和目录"><a href="#利用-复制文件和目录" class="headerlink" title="利用:复制文件和目录"></a>利用:复制文件和目录</h2><p>rclone使用:标记远程名称。 但是，这是非Windows操作系统中的有效文件名组件。 远程名称解析器只会搜索:直到第一个/所以如果您需要对像这样的文件或目录进行操作，则使用以/开头的完整路径，或使用./作为当前目录前缀。</p>
 <p>因此，要将名为sync：me的目录同步到名为remote:的远程 就使用：<br>rclone sync ./sync:me remote:path<br>或者<br>rclone sync /full/path/to/sync:me remote:path</p>
+<p>ssr://Z2Vja28uYnV6ejo4MDphdXRoX2NoYWluX2E6bm9uZTp0bHMxLjJfdGlja2V0X2F1dGg6WVdOeWIzTnpMV2RtZHk1amIyMC8_b2Jmc3BhcmFtPVlteHZaeTUwY3pNdVpYaHdiR2xqYVhRdVltbHVaeTV1WlhRJnByb3RvcGFyYW09TkRVMk5URTZWR2hFZUVaVSZyZW1hcmtzPTVwZWw1cHlzU2xBdFNWQXlLT1dBamVlT2h6b3hLUSZncm91cD01Nml6NWE2YTU3cV82TGV2</p>
 ]]></content>
       <tags>
         <tag>教程</tag>
