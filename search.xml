@@ -27,6 +27,7 @@
 <h2 id="利用-复制文件和目录"><a href="#利用-复制文件和目录" class="headerlink" title="利用:复制文件和目录"></a>利用:复制文件和目录</h2><p>rclone使用:标记远程名称。 但是，这是非Windows操作系统中的有效文件名组件。 远程名称解析器只会搜索:直到第一个/所以如果您需要对像这样的文件或目录进行操作，则使用以/开头的完整路径，或使用./作为当前目录前缀。</p>
 <p>因此，要将名为sync：me的目录同步到名为remote:的远程 就使用：<br>rclone sync ./sync:me remote:path<br>或者<br>rclone sync /full/path/to/sync:me remote:path</p>
 <p>ssr://Z2Vja28uYnV6ejo4MDphdXRoX2NoYWluX2E6bm9uZTp0bHMxLjJfdGlja2V0X2F1dGg6WVdOeWIzTnpMV2RtZHk1amIyMC8_b2Jmc3BhcmFtPVlteHZaeTUwY3pNdVpYaHdiR2xqYVhRdVltbHVaeTV1WlhRJnByb3RvcGFyYW09TkRVMk5URTZWR2hFZUVaVSZyZW1hcmtzPTVwZWw1cHlzU2xBdFNWQXlLT1dBamVlT2h6b3hLUSZncm91cD01Nml6NWE2YTU3cV82TGV2</p>
+<p><a href="https://dawangidc.net/modules/servers/UnlimitedSocks/subscribe.php?sid=13810&amp;token=ShYHhhR8Q6mc1" target="_blank" rel="noopener">https://dawangidc.net/modules/servers/UnlimitedSocks/subscribe.php?sid=13810&amp;token=ShYHhhR8Q6mc1</a></p>
 ]]></content>
       <tags>
         <tag>教程</tag>
@@ -49,11 +50,11 @@
 <p><a href="https://zhuanlan.zhihu.com/p/71164003" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/71164003</a></p>
 ]]></content>
       <tags>
+        <tag>教程</tag>
         <tag>命令</tag>
         <tag>常用</tag>
         <tag>Ubuntu</tag>
         <tag>技术</tag>
-        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -124,6 +125,22 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Hello Hexo!</title>
+    <url>/2019/05/09/hello-world/</url>
+    <content><![CDATA[<h2 id="欢迎使用Hexo，这是一个快速入门的教程。"><a href="#欢迎使用Hexo，这是一个快速入门的教程。" class="headerlink" title="欢迎使用Hexo，这是一个快速入门的教程。"></a>欢迎使用Hexo，这是一个快速入门的教程。</h2><h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建一个新的post"><a href="#创建一个新的post" class="headerlink" title="创建一个新的post"></a>创建一个新的post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="运行服务在本地端口"><a href="#运行服务在本地端口" class="headerlink" title="运行服务在本地端口"></a>运行服务在本地端口</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="部署到远程服务器"><a href="#部署到远程服务器" class="headerlink" title="部署到远程服务器"></a>部署到远程服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
     <title>Hexo+Github Pages搭建小博客</title>
     <url>/2019/05/09/Hexo-Github-Pages%E6%90%AD%E5%BB%BA%E5%B0%8F%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<h1 id="Hexo-GitHub-pages搭建个人小博客"><a href="#Hexo-GitHub-pages搭建个人小博客" class="headerlink" title="Hexo + GitHub pages搭建个人小博客"></a>Hexo + GitHub pages搭建个人小博客</h1><h2 id="Hexo的配置使用"><a href="#Hexo的配置使用" class="headerlink" title="Hexo的配置使用"></a>Hexo的配置使用</h2><h3 id="1、安装git和node-js"><a href="#1、安装git和node-js" class="headerlink" title="1、安装git和node.js"></a>1、安装git和node.js</h3><h4 id="nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-Git的安装"><a href="#nbsp-nbsp-nbsp-nbsp-nbsp-nbsp-Git的安装" class="headerlink" title="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Git的安装"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Git的安装</h4><blockquote>
@@ -162,21 +179,5 @@
         <tag>GitHub</tag>
         <tag>博客</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello Hexo!</title>
-    <url>/2019/05/09/hello-world/</url>
-    <content><![CDATA[<h2 id="欢迎使用Hexo，这是一个快速入门的教程。"><a href="#欢迎使用Hexo，这是一个快速入门的教程。" class="headerlink" title="欢迎使用Hexo，这是一个快速入门的教程。"></a>欢迎使用Hexo，这是一个快速入门的教程。</h2><h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建一个新的post"><a href="#创建一个新的post" class="headerlink" title="创建一个新的post"></a>创建一个新的post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-
-<h3 id="运行服务在本地端口"><a href="#运行服务在本地端口" class="headerlink" title="运行服务在本地端口"></a>运行服务在本地端口</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="部署到远程服务器"><a href="#部署到远程服务器" class="headerlink" title="部署到远程服务器"></a>部署到远程服务器</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-]]></content>
   </entry>
 </search>
