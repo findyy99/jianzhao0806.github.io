@@ -57,7 +57,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="安装　推荐通过脚本快速安装，对于Linux&#x2F;macOS&#x2F;BSD系统，在终端中执行以下命令　 1curl https:&#x2F;&#x2F;rclone.org&#x2F;install.sh | sudo bash  引导　首先，由于各个对象存储系统的身份验证相当复杂，故Rclone都将起保存在config中。 通过下面命令来首次引导rclone 1rclone config   用法Rclone将目录从一个存储系统同步到另">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-07T03:31:18.468Z">
+<meta property="og:updated_time" content="2020-03-10T08:55:24.476Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://www.findyy.gq/2020/02/26/rclone%E7%9A%84%E4%BD%BF%E7%94%A8/">
@@ -231,7 +231,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-07 11:31:18" itemprop="dateModified" datetime="2020-03-07T11:31:18+08:00">2020-03-07</time>
+                <time title="Modified: 2020-03-10 16:55:24" itemprop="dateModified" datetime="2020-03-10T16:55:24+08:00">2020-03-10</time>
               </span>
 
           
@@ -287,15 +287,22 @@
 
 <p>源和目标路径由您在配置文件中给存储系统的名称指定，然后是子路径，例如“drive:myfolder”以查看Google驱动器中的“myfolder”。</p>
 <p>您可以在配置文件中定义尽可能多的存储路径。</p>
-<h2 id="子命令"><a href="#子命令" class="headerlink" title="子命令"></a>子命令</h2><p>rclone使用一个子命令系统。 例如：<br>rclone ls remote:path # lists a re<br>rclone copy /local/path remote:path # copies /local/path to the remote<br>rclone sync /local/path remote:path # syncs /local/path to the remote</p>
+<h2 id="子命令"><a href="#子命令" class="headerlink" title="子命令"></a>子命令</h2><p>rclone使用一个子命令系统。 例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rclone ls remote:path # lists a re</span><br><span class="line">rclone copy /local/path remote:path # copies /local/path to the remote</span><br><span class="line">rclone sync /local/path remote:path # syncs /local/path to the remote</span><br></pre></td></tr></table></figure>
 <p>具体使用列表请见《命令行汇总列表》</p>
-<h2 id="复制单文件"><a href="#复制单文件" class="headerlink" title="复制单文件"></a>复制单文件</h2><p>rclone通常会同步或复制目录。 但是，如果源远程指向一个文件，rclone将只复制该文件。 目标远程站点必须指向一个目录 – 否则rclone会给出错误：<br>Failed to create file system for “remote:file”: is a file not a directory<br>比如你在remote有个文件叫test.jpg的想要复制，那你可以像下面这样复制：<br>rclone copy remote:test.jpg /tmp/download</p>
+<h2 id="复制单文件"><a href="#复制单文件" class="headerlink" title="复制单文件"></a>复制单文件</h2><p>rclone通常会同步或复制目录。 但是，如果源远程指向一个文件，rclone将只复制该文件。 目标远程站点必须指向一个目录 – 否则rclone会给出错误：<br>Failed to create file system for “remote:file”: is a file not a directory<br>比如你在remote有个文件叫test.jpg的想要复制，那你可以像下面这样复制：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rclone copy remote:test.jpg /tmp/download</span><br></pre></td></tr></table></figure>
+
 <p>文件test.jpg将被放置在/ tmp /下载。</p>
-<p>这相当于指定<br>rclone copy –files-from /tmp/files remote: /tmp/download</p>
-<p>/tmp/files包含单行</p>
-<p>test.jpg放在<br>建议在复制单个文件时使用复制，而不是同步。 他们有几乎相同的效果，但复制将使用更少的内存。</p>
+<p>这相当于指定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rclone copy --files-from /tmp/files remote: /tmp/download/tmp/files</span><br></pre></td></tr></table></figure>
+<p>包含单行test.jpg放在<br>建议在复制单个文件时使用复制，而不是同步。 他们有几乎相同的效果，但复制将使用更少的内存。</p>
 <h2 id="利用-复制文件和目录"><a href="#利用-复制文件和目录" class="headerlink" title="利用:复制文件和目录"></a>利用:复制文件和目录</h2><p>rclone使用:标记远程名称。 但是，这是非Windows操作系统中的有效文件名组件。 远程名称解析器只会搜索:直到第一个/所以如果您需要对像这样的文件或目录进行操作，则使用以/开头的完整路径，或使用./作为当前目录前缀。</p>
-<p>因此，要将名为sync：me的目录同步到名为remote:的远程 就使用：<br>rclone sync ./sync:me remote:path<br>或者<br>rclone sync /full/path/to/sync:me remote:path</p>
+<p>因此，要将名为sync：me的目录同步到名为remote:的远程 就使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rclone sync ./sync:me remote:path</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rclone sync /full/path/to/sync:me remote:path</span><br></pre></td></tr></table></figure>
+
 <p>ssr://Z2Vja28uYnV6ejo4MDphdXRoX2NoYWluX2E6bm9uZTp0bHMxLjJfdGlja2V0X2F1dGg6WVdOeWIzTnpMV2RtZHk1amIyMC8_b2Jmc3BhcmFtPVlteHZaeTUwY3pNdVpYaHdiR2xqYVhRdVltbHVaeTV1WlhRJnByb3RvcGFyYW09TkRVMk5URTZWR2hFZUVaVSZyZW1hcmtzPTVwZWw1cHlzU2xBdFNWQXlLT1dBamVlT2h6b3hLUSZncm91cD01Nml6NWE2YTU3cV82TGV2</p>
 <p><a href="https://dawangidc.net/modules/servers/UnlimitedSocks/subscribe.php?sid=13810&amp;token=ShYHhhR8Q6mc1" target="_blank" rel="noopener">https://dawangidc.net/modules/servers/UnlimitedSocks/subscribe.php?sid=13810&amp;token=ShYHhhR8Q6mc1</a></p>
 
@@ -321,7 +328,7 @@
       <i class="fa fa-chevron-left"></i> 常用命令
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/03/10/Gcam/" rel="next" title="Gcam">
+    <a href="/2020/03/10/Gcam%20for%20OP%207T/" rel="next" title="Gcam">
       Gcam <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
