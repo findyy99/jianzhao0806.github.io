@@ -49,14 +49,14 @@
 <!-- 网页加载条 -->
 <script src="https://neveryu.github.io/js/src/pace.min.js"></script>
 
-  <meta name="description" content="注释在LaTex中的注释有3种:  用%注释一行文字; 用iffalse …. fi 注释一段文字; 用begin{comment} … end{comment} 包含被注释的文字，需要在引言区包括相应的宏包, 即 usepackage{verbatim}.">
+  <meta name="description" content="注释在LaTex中的注释有3种:  用%注释一行文字; 用iffalse …. fi 注释一段文字; 用begin{comment} … end{comment} 包含被注释的文字，需要在引言区包括相应的宏包, 即 usepackage{verbatim}.  表格自动换行 宏包：\usepackage{makecell}  环境：tabular  命令：\makecell[居中情况]{第1行内容">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Latex笔记">
 <meta property="og:url" content="https:&#x2F;&#x2F;www.findyy.gq&#x2F;2020&#x2F;06&#x2F;09&#x2F;Latex%E7%AC%94%E8%AE%B0&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="注释在LaTex中的注释有3种:  用%注释一行文字; 用iffalse …. fi 注释一段文字; 用begin{comment} … end{comment} 包含被注释的文字，需要在引言区包括相应的宏包, 即 usepackage{verbatim}.">
+<meta property="og:description" content="注释在LaTex中的注释有3种:  用%注释一行文字; 用iffalse …. fi 注释一段文字; 用begin{comment} … end{comment} 包含被注释的文字，需要在引言区包括相应的宏包, 即 usepackage{verbatim}.  表格自动换行 宏包：\usepackage{makecell}  环境：tabular  命令：\makecell[居中情况]{第1行内容">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-06-09T14:56:58.518Z">
+<meta property="og:updated_time" content="2020-06-10T02:34:17.706Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://www.findyy.gq/2020/06/09/Latex%E7%AC%94%E8%AE%B0/">
@@ -222,10 +222,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-06-09 22:47:44 / Modified: 22:56:58" itemprop="dateCreated datePublished" datetime="2020-06-09T22:47:44+08:00">2020-06-09</time>
+              <time title="Created: 2020-06-09 22:47:44" itemprop="dateCreated datePublished" datetime="2020-06-09T22:47:44+08:00">2020-06-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-10 10:34:17" itemprop="dateModified" datetime="2020-06-10T10:34:17+08:00">2020-06-10</time>
+              </span>
 
           
   
@@ -247,7 +253,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>117</span>
+              <span>339</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -271,6 +277,20 @@
 <li>用%注释一行文字;</li>
 <li>用iffalse …. fi 注释一段文字;</li>
 <li>用begin{comment} … end{comment} 包含被注释的文字，需要在引言区包括相应的宏包, 即 usepackage{verbatim}.</li>
+</ul>
+<h3 id="表格自动换行"><a href="#表格自动换行" class="headerlink" title="表格自动换行"></a>表格自动换行</h3><ul>
+<li><p>宏包：\usepackage{makecell}</p>
+</li>
+<li><p>环境：tabular</p>
+</li>
+<li><p>命令：\makecell[居中情况]{第1行内容 \ 第2行内容 \ 第3行内容 …}</p>
+</li>
+<li><p>参数说明：[c]是水平居中，[l]水平左居中，[r]水平右居中；<em>[c]水平 + 垂直居中，</em>[l]垂直居中 + 水平左居中，*[r]垂直居中 + 水平右居中。</p>
+</li>
+<li><p>注意1：makecell里文本内容想换行，就用 \ 分隔即可；</p>
+</li>
+<li><p>注意2：”tabular环境里”用不了”enumerate环境”！即”只能手动枚举”！</p>
+</li>
 </ul>
 
     </div>
@@ -351,7 +371,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-number">1.</span> <span class="nav-text">注释</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-number">1.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格自动换行"><span class="nav-number">2.</span> <span class="nav-text">表格自动换行</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -414,7 +434,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">Symbols count total: </span>
-    <span title="Symbols count total">6k</span>
+    <span title="Symbols count total">7k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
